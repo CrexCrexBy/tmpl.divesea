@@ -1,0 +1,86 @@
+@layer themes.default {
+	:root {
+		// & цвета из макета - не оптимизированы
+		--tmp-gray-20: #D0D0D0;
+		--tmp-gray-25: #D2D2D2;
+		--tmp-gray-40: #949494;
+		--tmp-gray-45: #93989A;
+		--tmp-gray-50: #848586;
+		--tmp-black-90: #141416;
+		--tmp-black-98: #010101;
+		--tmp-black-100: #000000;
+
+		// * НЕ оптимизированные цвета
+		--color-blue-12: hsl(240 5% 8%);
+		--color-blue-12: hsl(225 7% 12%);
+		--color-blue-42: hsl(211 100% 42%);
+		--color-blue-65: hsl(215 20% 65%);
+		--color-blue-78: hsl(233 8% 78%);
+
+		--color-gray-15: hsl(0 0% 15%);
+		--color-gray-38: hsl(0 0% 38%);
+		--color-gray-58: hsl(0 0% 58%);
+		--color-gray-62: hsl(0 0% 62%);
+		--color-gray-77: hsl(0 0% 77%);
+		--color-gray-82: hsl(0 0% 82%);
+		--color-gray-93: hsl(0 0% 93%);
+
+		--color-black-0: hsl(0 0% 0%);
+
+		--base-transition: .2s ease-in-out;
+
+		// * button
+		--button-gap: .5rem;
+		--button-padding: .75rem 1.25rem;
+		--button-font-size: 1rem;
+		--button-line-height: 1.5;
+		--button-text-transform: none;
+		
+		--button-border-width: .125rem;
+		--button-border-color: currentColor;
+		--button-border-radius: .75rem;
+		--button-outline-width: .125rem;
+		--button-outline-offset: calc(var(--button-outline-width) * -3);
+		
+		--button-outline-color: transparent;
+		
+		--button-transition-property: color, background-color, border-color, outline-color;
+
+		color-scheme: light;
+
+	}
+}
+
+@layer themes.light {
+	// @media (prefers-color-scheme: light) {
+		:root {
+			--button-color: currentColor;
+			--button-hover-color: tomato;
+			--button-active-color: green;
+			--button-tap-color: currentColor;
+	
+			--button-inverse-color: currentColor;
+			--button-inverse-hover-color: tomato;
+			--button-inverse-active-color: green;
+			
+			--button-background-color: none;
+			--button-accent-background-color: none;
+	
+			--button-icon-color: var(--button-background-color);
+	
+			--button-icon-background-color: currentColor;
+
+			--button-tap-highlight-background-color: tomato;
+
+			color-scheme: light;
+		}
+	// }
+}
+
+// @layer themes.dark {
+// 	@media (prefers-color-scheme: dark) {
+// 		:root {
+// 			color-scheme: dark;
+// 		}
+// 	}
+// }

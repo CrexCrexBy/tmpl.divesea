@@ -1,0 +1,15 @@
+@layer base.default {
+	html {
+		overflow-x: hidden;
+	}
+	body {
+		font-size: 16px;
+	}
+	html, body {
+		min-height: 100dvh;
+	}
+
+	img, picture, svg {
+		vertical-align: middle;
+	}
+}

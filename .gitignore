@@ -1,0 +1,8 @@
+.*
+*.url
+*.code-workspace
+!.gitignore
+!.editorconfig
+!readme.md
+ehthumbs.db
+Thumbs.db

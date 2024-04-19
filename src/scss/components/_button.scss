@@ -1,0 +1,125 @@
+@layer components.button {
+	.button {
+		$this: &;
+
+		position: relative;
+		display: inline-flex;
+		gap: var(--button-gap);
+		align-items: center;
+		justify-content: flex-start;
+		padding: var(--button-padding);
+		overflow: hidden;
+		isolation: isolate;
+		
+		font-size: var(--button-font-size);
+		line-height: var(--button-line-height);
+
+		text-transform: var(--button-text-transform);
+		vertical-align: middle;
+
+		color: var(--button-color);
+
+		background-color: var(--button-background-color);
+		border: var(--button-border-width) solid var(--button-border-color);
+		outline-offset: var(--button-outline-offset);
+
+		border-radius: var(--button-border-radius);
+
+		outline: var(--button-outline-width) dashed var(--button-outline-color);
+		
+		user-select: none;
+		-webkit-tap-highlight-color: transparent;
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition: var(--base-transition);
+			transition-property: var(--button-transition-property);
+		}
+
+		& * {
+			// * блокируем любые взаимодействия с внутренними элементами
+			pointer-events: none;
+		}
+
+		&:disabled {
+			cursor: not-allowed;
+		}
+
+		&:not(:disabled) {
+			$this-not-disable: &;
+			
+			cursor: pointer;
+
+			@media (hover: none) {
+				&::before {
+					position: absolute;
+					inset: 0;
+					z-index: -1;
+					background-color: var(--button-tap-highlight-background-color);
+					content: '';
+					opacity: 0;
+	
+					@media (prefers-reduced-motion: no-preference) {
+						transition: var(--base-transition);
+						transition-property: opacity;
+					}
+				}
+
+				&:active {
+					
+					--button-color: black;
+					
+					&::before {
+						opacity: 1;
+					}
+				}
+			}
+
+			// @media (hover: none) {
+			// 	&:active {
+			// 		--button-color: var(--button-active-color);
+			// 	}
+			// }
+			@media (hover: hover) {
+				&:focus:not(:focus-visible),
+				&:active {
+					--button-color: var(--button-active-color);
+				}
+			}
+
+			&:hover {}
+
+			&:hover,
+			&:focus-visible {
+				--button-color: var(--button-hover-color);
+			}
+	
+			&:focus-visible {
+				--button-outline-color: currentColor;
+			}
+
+			&#{$this}--active {
+				--button-color: var(--button-active-color);
+			}
+
+		}
+
+		&__icon {
+			
+			&.icon--backing {
+				--icon-size: 1.25rem;
+				--icon-padding: .25rem;
+				--icon-color: var(--button-icon-color);
+				--icon-background-color: var(--button-icon-background-color);
+			}
+		}
+
+		&--large {
+			--button-text-transform: uppercase;
+		}
+
+		&--inverse {}
+		
+		&--accent {}
+
+	}
+}

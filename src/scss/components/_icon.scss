@@ -1,0 +1,21 @@
+@layer components.icon {
+	.icon {
+		display: inline-block;
+		height: var(--icon-size, 1rem);
+		padding: var(--icon-padding, 0);
+		background-color: var(--icon-background-color, transition);
+		aspect-ratio: 1;
+		fill: var(--icon-color, currentColor);
+		stroke: var(--icon-color, currentColor);
+		border-radius: var(--icon-border-radius, 0);
+
+		&--backing {
+			--icon-background-color: currentColor;
+			--icon-border-radius: .1875rem;
+		}
+
+		&--circle {
+			--icon-border-radius: 50%;
+		}
+	}
+}
