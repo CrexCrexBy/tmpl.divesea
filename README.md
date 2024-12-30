@@ -1,1 +1,1 @@
-# tmpl-divesea
+# tmpl.divesea
